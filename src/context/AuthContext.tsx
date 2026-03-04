@@ -76,6 +76,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.removeItem("access_token");
     localStorage.removeItem("refreshToken");
     localStorage.removeItem("tokenExpires");
+    localStorage.removeItem("declaration_files_id");
     setIsAuthenticated(false);
     setUser(null);
   };
