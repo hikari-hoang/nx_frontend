@@ -1,0 +1,186 @@
+/* ===== ROOT BRAND COLORS ===== */
+:root {
+  --primary-dark: #1a005d;
+  --accent-green: #8ec300;
+  --white: #ffffff;
+  --gray-light: #f5f6fa;
+  --text-muted: #6b7280;
+}
+
+/* ===== LAYOUT ===== */
+.login-container {
+  display: flex;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===== LEFT SIDE ===== */
+.login-left {
+  flex: 2;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.login-left .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* làm tối nhẹ cho sang */
+}
+
+.login-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fa;
+}
+
+.logo {
+  text-align: left;
+  margin: 24px 0px 20px 20px;
+}
+
+.logo-img {
+  height: 40px;
+  object-fit: contain;
+}
+
+.hero-content h1 {
+  font-size: 32px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: var(--accent-green);
+}
+
+.hero-content p {
+  color: #d1d5db;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.stats {
+  display: flex;
+  gap: 50px;
+}
+
+.stats h2 {
+  color: var(--accent-green);
+  margin: 0;
+}
+
+.stats span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #d1d5db;
+}
+
+.footer {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ===== RIGHT SIDE ===== */
+.login-right {
+  flex: 1;
+  background: var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background: var(--white);
+  width: 420px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(26, 0, 93, 0.1);
+}
+
+.login-header {
+  margin-bottom: 30px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--accent-green);
+  color: var(--primary-dark);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.login-header h2 {
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+}
+
+.login-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ===== FORM ===== */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.login-options a {
+  color: var(--primary-dark);
+  font-weight: 500;
+}
+
+.login-options a:hover {
+  color: var(--accent-green);
+}
+
+/* ===== BUTTON SLIDE EFFECT ===== */
+.login-button {
+  position: relative;
+  overflow: hidden;
+  background: var(--primary-dark) !important;
+  border: none !important;
+  font-weight: 600;
+  color: var(--white) !important;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+/* lớp background trượt */
+.login-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent-green);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+/* hover */
+.login-button:hover::before {
+  transform: translateX(0);
+}
+
+.login-button:hover {
+  color: var(--primary-dark) !important;
+}
+.login-footer {
+  margin-top: 10px;
+}
+
+/* Cursor pointer */
+button,
+a,
+.ant-btn,
+.login-button {
+  cursor: pointer !important;
+}
