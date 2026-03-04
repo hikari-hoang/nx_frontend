@@ -3,7 +3,7 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox } from "antd";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import "./login.css";
+import "./Login.css";
 import bgImage from "../../assets/img_visual_01.webp";
 
 export default function LoginPage() {
