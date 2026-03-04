@@ -1,7 +1,6 @@
 import { message, Spin } from "antd";
 import { FormProvider, useForm } from "react-hook-form";
 
-import TaxGuaranteeSection from "../pages/declaration/section/TaxGuaranteeSection";
 
 
 import type { DeclarationFormData } from "../types/declaration";
