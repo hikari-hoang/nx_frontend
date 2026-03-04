@@ -1,36 +1,110 @@
 .ai-trigger-btn {
-  font-weight: 600;
-  padding: 0 48px;
-  border-radius: 40px;
+  position: relative;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 18px;
+  height: 64px;
+  padding: 0 40px;
+  min-width: 320px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+}
+
+/* ===== IDLE – Tím chủ đạo ===== */
+.ai-trigger-btn.idle {
+  background: #1a005d;
+  color: #ffffff;
   border: none;
-  transition: all 0.35s ease;
-  height: 48px;
 }
 
-/* START STATE */
-.ai-trigger-btn.start {
+.ai-trigger-btn.idle:hover {
+  background: #2a0a7a;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(26, 0, 93, 0.35);
+}
+
+/* ===== RUNNING – Xanh AI active ===== */
+.ai-trigger-btn.running {
   background: #8ec300;
   color: #1a005d;
-  box-shadow: 0 4px 14px rgba(142, 195, 0, 0.4);
+  border: none;
+  animation: pulseGlow 1.6s infinite;
 }
 
-.ai-trigger-btn.start:hover {
-  background: #1a005d;
+/* Glow xanh */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(142, 195, 0, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(142, 195, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(142, 195, 0, 0);
+  }
+}
+
+/* Icon quay khi running */
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ripple nhẹ */
+.ai-trigger-btn.running::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  animation: ripple 2s infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.custom-radio-green .ant-radio-checked .ant-radio-inner {
+  border-color: #8ec300 !important;
+  background-color: #8ec300 !important;
+}
+
+/* Hover chỉ đổi viền radio, không đổi chữ */
+.custom-radio-green
+  .ant-radio-wrapper:hover
+  .ant-radio-inner {
+  border-color: #8ec300;
+}
+/* Background chính */
+.ai-tooltip .ant-tooltip-inner {
+  background-color: #1a005d !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 6px 20px rgba(26, 0, 93, 0.25);
+}
+
+/* Mũi tên */
+.ai-tooltip .ant-tooltip-arrow::before {
+  background-color: #1a005d !important;
+}
+
+/* Accent khi hover button đang running */
+.ai-trigger-btn.running:hover + .ant-tooltip,
+.ai-tooltip .ant-tooltip-inner strong {
   color: #8ec300;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(26, 0, 93, 0.5);
-}
-
-/* STOP STATE */
-.ai-trigger-btn.stop {
-  background: #1a005d;
-  color: #8ec300;
-  box-shadow: 0 4px 14px rgba(26, 0, 93, 0.4);
-}
-
-.ai-trigger-btn.stop:hover {
-  background: #8ec300;
-  color: #1a005d;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(142, 195, 0, 0.5);
 }

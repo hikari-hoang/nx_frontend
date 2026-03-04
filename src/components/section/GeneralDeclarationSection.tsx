@@ -99,13 +99,15 @@ export default function GeneralDeclarationSection() {
 
       case "radio":
         return (
-          <Radio.Group {...field}>
-            {config.options?.map((opt: any) => (
-              <Radio key={opt.value} value={opt.value}>
-                {opt.label}
-              </Radio>
-            ))}
-          </Radio.Group>
+          <div className="custom-radio-green">
+            <Radio.Group {...field}>
+              {config.options?.map((opt: any) => (
+                <Radio key={opt.value} value={opt.value}>
+                  {opt.label}
+                </Radio>
+              ))}
+            </Radio.Group>
+          </div>
         );
 
       case "select":

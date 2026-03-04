@@ -9,6 +9,7 @@ import { declarationService } from "../../service/declarationService";
 import { fileService, type FileResponse } from "../../service/fileService";
 import ActionButtons from "../../components/ActionButtons";
 import { useDeclaration } from "../../context/DeclarationContext";
+import "./Declaration.css";
 
 const DeclarationsPage = () => {
   const { id } = useParams();

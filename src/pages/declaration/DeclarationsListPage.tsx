@@ -18,6 +18,7 @@ import {
   MailOutlined,
   CheckCircleOutlined,
   ExclamationCircleOutlined,
+  SyncOutlined,
   StopOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
@@ -44,6 +45,7 @@ const DeclarationsListPage = () => {
 
   const [triggerLoading, setTriggerLoading] = useState(false);
   const { setFilesId } = useDeclaration();
+  const [hovered, setHovered] = useState(false);
 
   const [pagination, setPagination] = useState<TablePaginationConfig>({
     current: 1,
@@ -64,7 +66,7 @@ const DeclarationsListPage = () => {
   const fetchDeclarations = async () => {
     setLoading(true);
     try {
-      const res : any = await declarationService.getDeclarations({
+      const res: any = await declarationService.getDeclarations({
         // type: filters.type || undefined,
         referenceNo: filters.name || undefined,
         fromDate: filters.dateRange?.[0]?.format("YYYY-MM-DD"),
@@ -106,7 +108,7 @@ const DeclarationsListPage = () => {
 
     intervalRef.current = setInterval(() => {
       fetchDeclarations();
-    }, 60000); // 60 giây
+    }, 10000); // 10 giây
   };
 
   const stopPolling = () => {
@@ -192,7 +194,7 @@ const DeclarationsListPage = () => {
         <Button
           size="small"
           onClick={() => {
-            setFilesId(record.files_id); 
+            setFilesId(record.files_id);
             navigate(`/declarations/${record.declaration_id}`);
           }}
         >
@@ -212,20 +214,45 @@ const DeclarationsListPage = () => {
           textAlign: "center",
         }}
       >
-        <Title level={4}>Sẵn sàng xử lý lô mới?</Title>
+        <Title level={4}>
+          {triggeringStatus
+            ? "AI đang xử lý tự động"
+            : "Sẵn sàng xử lý lô mới?"}
+        </Title>
+
         <Text type="secondary">
-          Nhấn bên dưới để khởi động AI và tự động xử lý email tờ khai.
+          {triggeringStatus
+            ? "Hệ thống AI đang theo dõi email và tự động xử lý tờ khai mới."
+            : "Nhấn bên dưới để kích hoạt AI và tự động xử lý email tờ khai."}
         </Text>
 
         <div style={{ marginTop: 20 }}>
           <Button
             size="large"
-            icon={triggeringStatus ? <StopOutlined /> : <PlayCircleOutlined />}
-            className={`ai-trigger-btn ${triggeringStatus ? "stop" : "start"}`}
+            icon={
+              triggeringStatus ? (
+                hovered ? (
+                  <StopOutlined />
+                ) : (
+                  <SyncOutlined spin />
+                )
+              ) : (
+                <PlayCircleOutlined />
+              )
+            }
+            className={`ai-trigger-btn ${triggeringStatus ? "running" : "idle"} ${
+              hovered ? "hovering" : ""
+            }`}
             loading={triggerLoading}
             onClick={handleTriggerClick}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
           >
-            {triggeringStatus ? "STOP AI AUTOMATION" : "START AI AUTOMATION"}
+            {triggeringStatus
+              ? hovered
+                ? "DỪNG HỆ THỐNG AI"
+                : "AI AUTOMATION RUNNING..."
+              : "START AI AUTOMATION"}
           </Button>
         </div>
       </Card>
