@@ -186,26 +186,29 @@ export const mockData = {
   updatedAt: "2026-02-13T10:31:14.903Z",
 };
 
-
 export const handleExportExcel = async (id: string) => {
   try {
-    const response : any = await declarationService.exportExcel(id);
-    console.log('res', response)
+    const response: any = await declarationService.exportExcel(id);
 
-    const blob = new Blob([response], {
-      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    });
+    const blob = response?.data;
 
-    const url = window.URL.createObjectURL(blob);
+    const contentDisposition = response?.headers["content-disposition"];
+
+    let fileName = `declaration-${id}`;
+
+    if (contentDisposition) {
+      const match = contentDisposition.match(/filename="?(.+)"?/);
+      if (match?.[1]) fileName = match[1];
+    }
+
+    const url = URL.createObjectURL(blob);
 
     const link = document.createElement("a");
     link.href = url;
-    link.download = `declaration-${id}.xlsx`;
-    document.body.appendChild(link);
+    link.download = fileName;
     link.click();
 
-    link.remove();
-    window.URL.revokeObjectURL(url);
+    URL.revokeObjectURL(url);
   } catch (error) {
     console.error("Export failed", error);
   }

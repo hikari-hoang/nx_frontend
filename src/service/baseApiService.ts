@@ -55,9 +55,12 @@ class BaseServiceApi {
   post<T, D = any>(
     url: string,
     data?: D,
-    config?: AxiosRequestConfig,
+    config?: AxiosRequestConfig & { rawResponse?: boolean },
   ): Promise<T> {
-    return axiosInstance.post(url, data, config).then((res) => res.data);
+    return axiosInstance.post(url, data, config).then((res) => {
+      if (config?.rawResponse) return res as any;
+      return res.data;
+    });
   }
 
   put<T, D = any>(

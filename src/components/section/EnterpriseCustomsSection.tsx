@@ -33,18 +33,18 @@ const enterpriseCustomsFields = [
       name: "KhaiToKhai.Dia_chi_nguoi_xuat_nhap_khau2",
     },
   ],
-  [
-    {
-      span: 12,
-      label: "Địa chỉ người xuất/nhập khẩu 3",
-      name: "KhaiToKhai.Dia_chi_nguoi_xuat_nhap_khau3",
-    },
-    {
-      span: 12,
-      label: "Địa chỉ người xuất/nhập khẩu 4",
-      name: "KhaiToKhai.Dia_chi_nguoi_xuat_nhap_khau4",
-    },
-  ],
+  // [
+  //   {
+  //     span: 12,
+  //     label: "Địa chỉ người xuất/nhập khẩu 3",
+  //     name: "KhaiToKhai.Dia_chi_nguoi_xuat_nhap_khau3",
+  //   },
+  //   {
+  //     span: 12,
+  //     label: "Địa chỉ người xuất/nhập khẩu 4",
+  //     name: "KhaiToKhai.Dia_chi_nguoi_xuat_nhap_khau4",
+  //   },
+  // ],
   [
     {
       span: 12,
@@ -58,40 +58,45 @@ const enterpriseCustomsFields = [
     },
   ],
   [
-    {
-      span: 12,
-      label: "Mã đại lý HQ",
-      name: "KhaiToKhai.Ma_dai_ly_HQ",
-    },
-    {
-      span: 12,
-      label: "Mã bộ phận xử lý tờ khai",
-      name: "KhaiToKhai.Ma_bo_phan_xu_ly_tk",
-    },
+    // {
+    //   span: 12,
+    //   label: "Mã đại lý HQ",
+    //   name: "KhaiToKhai.Ma_dai_ly_HQ",
+    // },
+    // {
+    //   span: 12,
+    //   label: "Mã bộ phận xử lý tờ khai",
+    //   name: "KhaiToKhai.Ma_bo_phan_xu_ly_tk",
+    // },
   ],
   [
-    {
-      span: 12,
-      label: "Phân loại cá nhân/tổ chức",
-      name: "KhaiToKhai.Phan_loai_cac_nhan_to_chuc",
-    },
-    {
-      span: 12,
-      label: "Người nộp thuế",
-      name: "KhaiToKhai.Nguoi_nop_thue",
-    },
-  ],
-  [
+    // {
+    //   span: 12,
+    //   label: "Phân loại cá nhân/tổ chức",
+    //   name: "KhaiToKhai.Phan_loai_cac_nhan_to_chuc",
+    // },
     {
       span: 12,
       label: "Mã nước xuất khẩu",
       name: "KhaiToKhai.Ma_nuoc_xuat_khau",
     },
-    {
-      span: 12,
-      label: "Mã lý do đề nghị BP",
-      name: "KhaiToKhai.Ma_ly_do_de_nghi_BP",
-    },
+    // {
+    //   span: 12,
+    //   label: "Người nộp thuế",
+    //   name: "KhaiToKhai.Nguoi_nop_thue",
+    // },
+  ],
+  [
+    // {
+    //   span: 12,
+    //   label: "Mã nước xuất khẩu",
+    //   name: "KhaiToKhai.Ma_nuoc_xuat_khau",
+    // },
+    // {
+    //   span: 12,
+    //   label: "Mã lý do đề nghị BP",
+    //   name: "KhaiToKhai.Ma_ly_do_de_nghi_BP",
+    // },
   ],
 ];
 

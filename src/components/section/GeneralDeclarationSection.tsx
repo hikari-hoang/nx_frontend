@@ -31,38 +31,19 @@ const generalDeclarationFields = [
   },
   {
     row: [
-      {
-        span: 8,
-        label: "Ngày đăng ký",
-        name: "KhaiToKhai.Ngay_dang_ky",
-        type: "date",
-      },
-      {
-        span: 8,
-        label: "Trạng thái",
-        name: "KhaiToKhai.Trang_thai",
-        type: "select",
-        options: [
-          { label: "Mới tạo", value: "NEW" },
-          { label: "Đã gửi", value: "SUBMITTED" },
-          { label: "Đã thông quan", value: "CLEARED" },
-        ],
-      },
-      {
-        span: 8,
-        label: "Phân luồng",
-        name: "KhaiToKhai.Phan_luong",
-        type: "select",
-        options: [
-          { label: "Xanh", value: "GREEN" },
-          { label: "Vàng", value: "YELLOW" },
-          { label: "Đỏ", value: "RED" },
-        ],
-      },
-    ],
-  },
-  {
-    row: [
+      // {
+      //   span: 8,
+      //   label: "Ngày đăng ký",
+      //   name: "KhaiToKhai.Ngay_dang_ky",
+      //   type: "date",
+      // },
+      // {
+      //   span: 12,
+      //   label: "Trạng thái",
+      //   name: "KhaiToKhai.Trang_thai",
+      //   type: "select",
+      //   options: [{ label: "Mới tạo", value: "N" }],
+      // },
       {
         span: 12,
         label: "Loại hình tờ khai",
@@ -71,22 +52,55 @@ const generalDeclarationFields = [
       },
       {
         span: 12,
-        label: "Mã phân loại tờ khai trị giá",
-        name: "KhaiToKhai.Ma_phan_loai_to_khai_tri_gia",
+        label: "Trị giá KB",
+        name: "KhaiToKhai.Tri_gia_KB",
         type: "input",
       },
+      {
+        span: 12,
+        label: "Tổng trị giá TT",
+        name: "KhaiToKhai.Tong_tri_gia_TT",
+        type: "input",
+      },
+      // {
+      //   span: 8,
+      //   label: "Phân luồng",
+      //   name: "KhaiToKhai.Phan_luong",
+      //   type: "select",
+      //   options: [
+      //     { label: "Xanh", value: "GREEN" },
+      //     { label: "Vàng", value: "YELLOW" },
+      //     { label: "Đỏ", value: "RED" },
+      //   ],
+      // },
     ],
   },
   {
     row: [
-      {
-        span: 24,
-        label: "Ghi chú",
-        name: "KhaiToKhai.Ghi_chu",
-        type: "input",
-      },
+      // {
+      //   span: 12,
+      //   label: "Loại hình tờ khai",
+      //   name: "KhaiToKhai.Loai_hinh_to_khai",
+      //   type: "input",
+      // },
+      // {
+      //   span: 12,
+      //   label: "Mã phân loại tờ khai trị giá",
+      //   name: "KhaiToKhai.Ma_phan_loai_to_khai_tri_gia",
+      //   type: "input",
+      // },
     ],
   },
+  // {
+  //   row: [
+  //     {
+  //       span: 24,
+  //       label: "Ghi chú",
+  //       name: "KhaiToKhai.Ghi_chu",
+  //       type: "input",
+  //     },
+  //   ],
+  // },
 ];
 
 export default function GeneralDeclarationSection() {

@@ -14,18 +14,18 @@ const locationFields = [
       name: "KhaiToKhai.Ten_dia_diem_luu_kho",
     },
   ],
-  [
-    {
-      span: 12,
-      label: "Mã địa điểm xếp hàng",
-      name: "KhaiToKhai.Ma_dia_diem_xep_hang",
-    },
-    {
-      span: 12,
-      label: "Tên địa điểm xếp hàng",
-      name: "KhaiToKhai.Ten_dia_diem_xep_hang",
-    },
-  ],
+  // [
+  //   {
+  //     span: 12,
+  //     label: "Mã địa điểm xếp hàng",
+  //     name: "KhaiToKhai.Ma_dia_diem_xep_hang",
+  //   },
+  //   {
+  //     span: 12,
+  //     label: "Tên địa điểm xếp hàng",
+  //     name: "KhaiToKhai.Ten_dia_diem_xep_hang",
+  //   },
+  // ],
   [
     {
       span: 12,

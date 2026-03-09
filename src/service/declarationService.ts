@@ -150,6 +150,7 @@ class DeclarationService {
       {},
       {
         responseType: "blob",
+        rawResponse: true,
       },
     );
   }

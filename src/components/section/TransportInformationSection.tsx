@@ -4,31 +4,37 @@ import dayjs from "dayjs";
 
 const transportFields = [
   [
+    // {
+    //   span: 8,
+    //   label: "Mã hiệu phương thức vận chuyển",
+    //   name: "KhaiToKhai.Ma_hieu_phuong_thuc_van_chuyen",
+    //   type: "input",
+    // },
+    // {
+    //   span: 8,
+    //   label: "Mã phương tiện vận chuyển",
+    //   name: "KhaiToKhai.Ma_phuong_tien_van_chuyen",
+    //   type: "input",
+    // },
+    // {
+    //   span: 8,
+    //   label: "Tên phương tiện vận chuyển",
+    //   name: "KhaiToKhai.Ten_phuong_tien_van_chuyen",
+    //   type: "input",
+    // },
+  ],
+  [
+    // {
+    //   span: 8,
+    //   label: "Ngày khởi hành vận chuyển",
+    //   name: "KhaiToKhai.Ngay_khoi_hanh_van_chuyen",
+    //   type: "date",
+    // },
     {
       span: 8,
       label: "Mã hiệu phương thức vận chuyển",
       name: "KhaiToKhai.Ma_hieu_phuong_thuc_van_chuyen",
       type: "input",
-    },
-    {
-      span: 8,
-      label: "Mã phương tiện vận chuyển",
-      name: "KhaiToKhai.Ma_phuong_tien_van_chuyen",
-      type: "input",
-    },
-    {
-      span: 8,
-      label: "Tên phương tiện vận chuyển",
-      name: "KhaiToKhai.Ten_phuong_tien_van_chuyen",
-      type: "input",
-    },
-  ],
-  [
-    {
-      span: 8,
-      label: "Ngày khởi hành vận chuyển",
-      name: "KhaiToKhai.Ngay_khoi_hanh_van_chuyen",
-      type: "date",
     },
     {
       span: 8,
@@ -44,20 +50,26 @@ const transportFields = [
     },
   ],
   [
+    // {
+    //   span: 12,
+    //   label: "Địa điểm đích cho vận chuyển bảo thuế",
+    //   name: "KhaiToKhai.Dia_diem_dich_cho_van_chuyen_bao_thue",
+    //   type: "input",
+    // },
+    // {
+    //   span: 12,
+    //   label: "Vận đơn",
+    //   name: "KhaiToKhai.Van_don",
+    //   type: "input",
+    // },
+  ],
+  [
     {
-      span: 12,
+      span: 8,
       label: "Địa điểm đích cho vận chuyển bảo thuế",
       name: "KhaiToKhai.Dia_diem_dich_cho_van_chuyen_bao_thue",
       type: "input",
     },
-    {
-      span: 12,
-      label: "Vận đơn",
-      name: "KhaiToKhai.Van_don",
-      type: "input",
-    },
-  ],
-  [
     {
       span: 8,
       label: "Số lượng kiện",
@@ -70,12 +82,12 @@ const transportFields = [
       name: "KhaiToKhai.Loai_kien",
       type: "input",
     },
-    {
-      span: 8,
-      label: "Số lượng cont",
-      name: "KhaiToKhai.So_luong_cont",
-      type: "input",
-    },
+    // {
+    //   span: 8,
+    //   label: "Số lượng cont",
+    //   name: "KhaiToKhai.So_luong_cont",
+    //   type: "input",
+    // },
   ],
   [
     {
@@ -103,9 +115,7 @@ export default function TransportInformationSection() {
           style={{ width: "100%" }}
           format="DD/MM/YYYY"
           value={field.value ? dayjs(field.value) : null}
-          onChange={(date) =>
-            field.onChange(date ? date.toISOString() : null)
-          }
+          onChange={(date) => field.onChange(date ? date.toISOString() : null)}
         />
       );
     }
